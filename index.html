@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ced9d6" />
+    <meta name="description" content="一张可以反复捏、带真实音效的电子泡泡纸。" />
+    <title>捏一下</title>
+    <link rel="stylesheet" href="./style.css?v=3" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">A SMALL BREAK</p>
+          <h1>捏一下，<span>松口气。</span></h1>
+        </div>
+        <div class="controls" aria-label="泡泡纸控制">
+          <button class="icon-button" id="sound-toggle" type="button" aria-label="关闭声音" aria-pressed="true">
+            <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path class="sound-wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>
+            <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="m17 9 5 5m0-5-5 5"/></svg>
+          </button>
+          <button class="reset-button" id="reset" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v6h6M20 20v-6h-6"/><path d="M5.1 15a8 8 0 0 0 13.2 2M18.9 9A8 8 0 0 0 5.7 7"/></svg>
+            换一张
+          </button>
+        </div>
+      </header>
+
+      <section class="play-area" aria-label="可交互泡泡纸">
+        <div class="sheet-shadow"></div>
+        <div class="bubble-sheet" id="bubble-sheet" role="group" aria-label="泡泡纸，点击或滑动来捏泡泡">
+        </div>
+        <div class="sheet-fold" aria-hidden="true"></div>
+      </section>
+
+      <footer class="statusbar">
+        <div class="progress-wrap">
+          <div class="progress-track"><span id="progress"></span></div>
+          <p><strong id="popped-count">0</strong> / <span id="total-count">0</span> 已捏</p>
+        </div>
+        <p class="hint" id="hint"><span></span>按住滑动，也很好玩</p>
+      </footer>
+    </main>
+
+    <div class="sound-prompt" id="sound-prompt" aria-hidden="true">打开声音，听见每一声清脆</div>
+    <script src="./script.js?v=10"></script>
+  </body>
+</html>
